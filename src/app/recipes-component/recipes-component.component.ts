@@ -21,7 +21,7 @@ export class RecipesComponentComponent implements OnInit {
   constructor(private recipeService: RecipeService) { }
 
   ngOnInit() {
-    $('#slider').slider();
+    //$('#slider').slider();
   }
   buscar() {
     this.recipeService.getRecipe(this.nombre, this.maxCal, this.cantidad).subscribe((response: Recipe[]) => {
