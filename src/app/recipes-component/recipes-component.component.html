@@ -1,0 +1,53 @@
+<div>
+    <table class="recipe-table" border="1">
+        <tr>
+            <td><label>Nombre:</label>
+            <td>
+                <input class="form-control" style="width: 99%;" type="text" [(ngModel)]="nombre"
+                    placeholder="Nombre receta" />
+            </td>
+        </tr>
+        <tr>
+            <td>Calorías máximas:</td>
+            <td>
+                <div id="slider"></div>
+            </td>
+        </tr>
+        <tr>
+            <td>Cantidad de resultados:</td>
+            <td>
+                <select style="width: 100%;" type="number" [(ngModel)]="cantidad">
+                    <option value="0">-- Seleccione --</option>
+                    <option value="1">1</option>
+                    <option value="2">2</option>
+                    <option value="3">3</option>
+                    <option value="4">4</option>
+                    <option value="5">5</option>
+                    <option value="6">6</option>
+                    <option value="7">7</option>
+                    <option value="8">8</option>
+                    <option value="9">9</option>
+                    <option value="10">10</option>
+                </select>
+            </td>
+        </tr>
+        <tr>
+            <td></td>
+            <td>
+                <button (click)="buscar()"> Buscar</button>
+            </td>
+        </tr>
+    </table><br />
+    <table *ngIf="recipes" class="recipe-table" border="1">
+        <tr>
+            <th>Id</th>
+            <th>Title</th>
+            <th>Image</th>
+        </tr>
+        <tr *ngFor="let recipe of recipes">
+            <td>{{recipe.id}}</td>
+            <td>{{recipe.title}}</td>
+            <td><img width="80" src="{{recipe.image}}" /></td>
+        </tr>
+    </table>
+</div>
